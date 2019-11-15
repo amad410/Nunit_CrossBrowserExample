@@ -9,12 +9,12 @@ using OpenQA.Selenium.Chrome;
 
 namespace Nunit_CrossBrowserTesting2
 {
-    [TestFixture(BrowserType.Chrome)]
+    [TestFixture("Chrome")]
     public class TestClass
     {
-        BrowserType _type;
+        string _type;
         private IWebDriver _driver;
-        public TestClass(BrowserType type)
+        public TestClass(string type)
         {
             _type = type;
         }
@@ -22,7 +22,7 @@ namespace Nunit_CrossBrowserTesting2
         [SetUp]
         public void Initialize()
         {
-            if (_type.Equals(BrowserType.Chrome))
+            if (_type.Equals("Chrome"))
             {
                 _driver = new ChromeDriver();
 
